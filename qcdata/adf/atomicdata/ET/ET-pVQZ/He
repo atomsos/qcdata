@@ -1,0 +1,89 @@
+ 4S 2P 1D 0F even-tempered basis for He                                                                                                                                                              
+! Added ZORA tight functions:  0S 0P 0D 0F
+  
+! Normal (nonrelativistic) basis and fit sets consist only of 1S, 2P, 3D, etc. functions 
+! For each l-value the exponents are defined by n, alpha, and beta
+! according to exponent = alpha * beta^i, for i = 1 up to n 
+! 
+! Values for n, alpha, beta for basis 
+! l = 0: n =  4 alpha = 0.291777 beta = 1.795000
+! l = 1: n =  2 alpha = 0.414087 beta = 1.800000
+! l = 2: n =  1 alpha = 1.111111 beta = 1.800000
+! 
+! Number of additional tight functions for ZORA calculation 
+! l =  0: nzora =  0
+! l =  1: nzora =  0
+! l =  2: nzora =  0
+! 
+! Values for n, alpha, beta for fit
+! l =  0: n =  8 alpha = 0.538329 beta = 1.453500
+! l =  1: n =  7 alpha = 0.557313 beta = 1.504500
+! l =  2: n =  7 alpha = 0.743666 beta = 1.428000
+! l =  3: n =  5 alpha = 1.444730 beta = 1.360000
+! l =  4: n =  3 alpha = 2.276286 beta = 1.326000
+! 
+! Number of additional tight S fit functions for ZORA calculation 
+! l =  0: nzora S fit functions = -1
+! 
+  
+ BASIS
+ 1S     3.029062440664153     
+ 1S     1.687500007289023     
+ 1S    0.9401114471499884     
+ 1S    0.5237389802932741     
+ 2P     1.341640768729202     
+ 2P    0.7453560023725255     
+ 3D     1.999999999999999     
+ END
+  
+ CORE 0 0 0 0
+ END
+  
+ DESCRIPTION
+  
+ END
+  
+ FIT
+ 1S     10.72427323737661     
+ 1S     7.378240589838282     
+ 1S     5.076188660673661     
+ 1S     3.492389683556881     
+ 1S     2.402744759332073     
+ 1S     1.653075086574517     
+ 1S     1.137306503838962     
+ 1S    0.7824605755535927     
+ 2P     9.723991692232481     
+ 2P     6.463271202570565     
+ 2P     4.295959515406301     
+ 2P     2.855406740578971     
+ 2P     1.897910728651897     
+ 2P     1.261489329258083     
+ 2P    0.8384774393273815     
+ 3D     9.004824635303633     
+ 3D     6.305899624558171     
+ 3D     4.415896109637239     
+ 3D     3.092364232244753     
+ 3D     2.165521177909289     
+ 3D     1.516471417912349     
+ 3D     1.061954777817196     
+ 4F     6.721735816941616     
+ 4F     4.942452594294373     
+ 4F     3.634156163245616     
+ 4F     2.672173534674368     
+ 4F     1.964833396987820     
+ 5G     5.307100459419654     
+ 5G     4.002338239232869     
+ 5G     3.018354655939065     
+ END
+  
+ FITCOEFFICIENTS
+    0.000000    
+    0.000000    
+    0.000000    
+    0.000000    
+    0.000000    
+    0.000000    
+    0.000000    
+    0.000000    
+ /
+ END

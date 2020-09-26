@@ -1,0 +1,23 @@
+AtomType H
+DIRAC H
+ 1  0
+VALENCE
+1S  1
+SubEnd
+BASISFUNCTIONS
+  1S     1.280000
+SubEnd
+FITFUNCTIONS
+  1S     3.160000
+  1S     2.090000
+  1S     1.380000
+  2S     1.500000
+  2P     4.000000
+  2P     2.650000
+  2P     1.750000
+  3D     4.000000
+  3D     2.500000
+  4F     3.000000
+  5G     4.000000
+SubEnd
+End

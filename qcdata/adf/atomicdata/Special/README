@@ -1,0 +1,50 @@
+short description basis sets:
+AE: non-relativistic all electron basis sets without fitfunctions.
+Bunge: non-relativistic all electron basis sets optimized for
+       Hartree-Fock calculations, made by Bunge et al..
+MDC: non-relativistic basis sets with optimized fit functions
+     especially useful for accurate Multipole Derived Charges.
+Vdiff: non-relativistic basis sets with extra diffuse functions.
+
+
+
+More extensive description basis sets
+
+AE:
+   Non-relativistic all electron optimized basis sets without fitfunctions
+   and without polarization functions with nuclear charge Z>36
+   sz: all electron single zeta
+   dz: all electron double zeta
+   tz: all electron double zeta triple zeta valence
+
+Bunge: 
+   Non-relativistic all electron basis sets optimized for
+   Hartree-Fock calculations.
+   Slater-type orbital expansions and expectation values for Z=2-54
+   Reference: C.F.Bunge, J.A.Barrientos and A.V.Bunge,
+              Atomic Data and Nuclear Data Tables 53,113-162(1993)
+   Complementary reference:
+              C.F.Bunge, J.A.Barrientos, A.V.Bunge and J.A.Cogordan,
+              Phys. Rev. A46,3691-3696(1992).
+
+MDC:
+   Non-relativistic basis sets with optimized fit functions.
+   The standard fit sets are often not accurate for the calculation
+   of the quadrupole moment calculated with the Multipole Derived
+   Charges. This means that there are differences whether one calculates
+   these charges with the fitted density or with the exact density.
+   For a few atoms Marcel Swart made new basis sets which have an improved
+   set of fitfunctions.
+   In principle one can think of improving the fit set for all the atoms
+   in the standard basis sets. In general this will not be necessary
+   for the calculation of bond energies and or Coulomb potential
+   with reasonable accuracy.
+   It is often not necessary to have a very accurate fit set,
+   if one only uses a moderate basis set.
+   Improved fit set can also be found in the ZORA/QZ4P directory
+   or in the ET directory.
+
+Vdiff:
+   Non-relativistic basis sets with extra diffuse functions
+   especially useful in the calculation of response properties,
+   like excitation energies and (hyper-) polarizabilities.

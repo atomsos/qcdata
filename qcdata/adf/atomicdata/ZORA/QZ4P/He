@@ -1,0 +1,51 @@
+Helium (QZ, all electron, 5S 2P 2D)
+ 
+BASIS
+        1S    7.000
+        1S    3.200
+        1S    1.700
+        1S    1.160
+1S     .600
+2P    1.500
+2P     .750
+3D    2.500
+3D    1.250
+END
+ 
+CORE    0  0  0  0
+END
+ 
+DESCRIPTION
+ 
+0/
+END
+ 
+FIT
+ 1S  14.00
+ 1S  10.78
+ 1S   8.31
+ 1S   6.40
+ 1S   4.24
+ 1S   2.81
+ 1S   1.86
+ 1S   1.23
+ 1S    .82
+ 2S   1.00
+ 2P   4.70
+ 2P   3.10
+ 2P   2.05
+ 2P   1.35
+ 3D   5.70
+ 3D   3.65
+ 3D   2.34
+ 3D   1.50
+ 4F   4.00
+ 4F   2.83
+ 4F   2.00
+ 5G   5.00
+ 5G   2.50
+END
+ 
+FITCOEFFICIENTS
+/
+END

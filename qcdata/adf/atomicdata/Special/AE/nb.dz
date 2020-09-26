@@ -1,0 +1,37 @@
+   NIOBIUM ALL ELECTRON DOUBLE ZETA
+
+BASIS
+1S  38.65
+1S  48.00
+2S  16.65
+3S   5.60
+3S   8.50
+4S   3.05
+4S   4.70
+5S    .95
+5S   1.65
+2P  15.80
+2P  22.85
+3P   6.75
+3P   9.80
+4P   2.55
+4P   4.20
+3D   6.15
+3D  11.35
+4D   1.15
+4D   2.80
+
+CORE    0  0  0  0
+END
+
+DESCRIPTION
+ 
+END
+
+FIT
+Not generated yet
+END
+
+FITCOEFFICIENTS
+0/
+END

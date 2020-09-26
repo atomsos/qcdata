@@ -1,0 +1,24 @@
+Short description of AUG basis sets, devised by Del Chong.
+
+These are augmented SZ, DZ, DZP, TZP, TZ2P non-relativistic basis sets for H-Kr,
+for use in TDDFT calculations, especially for the reasonable accurate
+calculation of excitation energies, with a relatively small basis set.
+The augmented STO basis functions are described by Del Chong in Mol. Phys. 103 (2005) 749.
+
+ basis sets for use with the molecular adf-program:
+  ASZ:   augmented non-relativistic single zeta
+  ADZ:   augmented non-relativistic double zeta
+  ADZP:  augmented non-relativistic double zeta + 1 polarization function
+  ATZP:  augmented non-relativistic valence triple zeta + 1 polarization function
+  ATZ2P: augmented non-relativistic valence triple zeta + 2 polarization function
+
+Compared to the standard basis sets (SZ, DZ, DZP, TZP, TZ2P)
+all atoms have an extra one diffuse s-STO and one diffuse p-STO in the basis set.
+The atoms B-Ne, Al-Ar, and Sc-Kr also have an extra diffuse d-STO in the basis set.
+To the fit sets added are two diffuse s-STOs with beta = 1.3,
+one diffuse p-STO with beta = 1.5, one diffuse d-STO with beta = 1.7,
+and one diffuse f-STO with beta = 1.9.
+
+Note: sometimes there is large overlap between one of the augmented STOs
+and an existing STO in the basis set, like two almost identical 2p-STOs
+in ATZ2P/Be, ATZ2P/Be.1s.

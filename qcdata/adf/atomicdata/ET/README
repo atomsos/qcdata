@@ -1,0 +1,42 @@
+
+Short description of ET basis sets, devised by Del Chong.
+
+ ET-pVQZ: latest (and best) ET basis set of quadruple zeta quality. It gives
+          lower basis set superposition errors than ET-QZ3P and ET-QZ+5P
+          due to a better description of the atoms. It is to be preferred 
+          over ET-QZ3P and ET-QZ+5P for this reason.
+ ET-QZ3P: non-relativistic valence quadruple zeta basis set + 3 polarization functions
+ ET-QZ3P-1DIFFUSE: basis set ET-QZ3P + 1 set of diffuse s,p,d,and f STOs
+ ET-QZ3P-2DIFFUSE: basis set ET-QZ3P + 2 sets of diffuse s,p,d,and f STOs
+ ET-QZ3P-3DIFFUSE: basis set ET-QZ3P + 3 sets of diffuse s,p,d,and f STOs
+ ET-QZ+5P: similar to basis set ET-QZ3P only 5 polarization functions instead of 3,
+           + 1 set of tight s, p, etc STOs (if there is an occupied s, p, etc level)
+           + 1 set of diffuse s, p, etc STOs (if there is an occupied s, p, etc level)
+            
+
+More extensive basis set description:
+ Even tempered all electron basis sets.
+ Normal (nonrelativistic) basis and fit sets consist only of 1S, 2P, 3D, etc. functions 
+ For each l-value the exponents are defined by n, alpha, and beta
+ according to exponent = alpha * beta^i, for i = 1 up to n 
+ In these basis sets (except ET-pVQZ) always beta = 1.7 is chosen.
+ for example basis sets sizes for oxygen:
+  ET-pVQZ:          6S 4P 2D 1F even-tempered basis for O
+  ET-QZ3P:          6S 4P 2D 1F even-tempered basis for O
+  ET-QZ3P-1DIFFUSE: 7S 5P 3D 2F even-tempered basis for O
+  ET-QZ3P-2DIFFUSE: 8S 6P 4D 3F even-tempered basis for O
+  ET-QZ3P-3DIFFUSE: 9S 7P 5D 4F even-tempered basis for O
+  ET-QZ+5P:         8S 6P 3D 2F even-tempered basis for O
+   
+Further comment: 
+For standard calculations (energies, geometries, etc.) we recommend the
+following hierarchy of basis sets:
+
+SZ < DZ < DZP < TZP < TZ2P < TZ2P+ < ET/ET-pVQZ < ZORA/QZ4P
+
+where the largest and most accurate basis is on the right. 
+Not all basis sets are available for all elements. Some basis sets
+do not contain frozen-core basis sets.
+
+For special calculations requiring diffuse functions, the DIFFUSE
+basis sets provided here may be of use in some cases.

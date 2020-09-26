@@ -1,0 +1,38 @@
+   INDIUM ALL ELECTRON DOUBLE ZETA
+
+BASIS
+1S  46.50
+1S  57.00
+2S  20.30
+3S  10.40
+4S   4.10
+4S   6.20
+5S   1.40
+5S   2.45
+2P  19.50
+2P  27.60
+3P   9.00
+3P  12.30
+4P   3.70
+4P   5.90
+5P    .90
+5P   1.80
+3D   8.70
+3D  14.90
+4D   2.45
+4D   4.90
+
+CORE    0  0  0  0
+END
+
+DESCRIPTION
+ 
+END
+
+FIT
+Not generated yet
+END
+
+FITCOEFFICIENTS
+0/
+END

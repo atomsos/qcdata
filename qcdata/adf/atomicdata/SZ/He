@@ -1,0 +1,32 @@
+Helium (SZ)
+ 
+BASIS
+1S   1.69
+END
+ 
+CORE    0  0  0  0
+END
+ 
+DESCRIPTION
+ 
+END
+ 
+FIT
+ 1S   6.10
+ 1S   4.41
+ 1S   3.18
+ 1S   2.30
+ 2S   1.50
+ 2P   4.00
+ 2P   2.65
+ 2P   1.75
+ 3D   4.00
+ 3D   2.50
+ 4F   3.00
+ 5G   4.00
+END
+ 
+FITCOEFFICIENTS
+  0.2417419E+00  0.1331717E+01  0.1333469E+01  0.6238951E+00
+/
+END

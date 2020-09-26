@@ -1,0 +1,624 @@
+*************************************************************************
+SYBYL/TRIPOS 5.2 FORCE FIELD FILE FOR ADF QM/MM
+*************************************************************************
+Clark, M.; Cramer III, R.D.; van Opdenbosch, N.  J. Comp. Chem.
+1989, 10, 982-1012.
+
+UNITS:  kcal/mol, Angstroms, degrees, amu unless otherwise specified
+
+ GENERAL NOTES:
+
+**************************************************************************
+Comments M. Swart, Nov. 2008:
+
+Note 1.
+This file is not correct for all parameters and atom types, and needs
+to be cleaned up. It has been corrected for some wrong atomtype names,
+and/or parameter values, in order for it to work on some test systems.
+For general use, the atomtypes and parameters from the original paper
+should be placed here. This will be done within the next few months.
+
+Note 2.
+This file does not work properly with NewMM at the moment, because the
+latter program does not use a potential for improper dihedrals that is
+used within the Tripos/Sybyl force field. This will be fixed within in
+the trunk within the next few months.
+**************************************************************************
+
+    - Force field Atom types are CASE SENSITIVE.  For example, LI will not
+      be recognized as different from Li.
+ 
+    - reading of the parameters is keyword driven with section headers
+      such as, 'BONDS' or 'VAN DER WAALS' marking the beginiing of each
+      section.   The '=======' separator lines mark the beginning
+      and end of the parameter data for each section.
+
+    - The program only reads parameter data found between the '====='
+      seperator lines.
+
+    - do not remove the '======' separator lines.
+
+    - sections can be in any order, i.e. BENDS can come before BONDS.
+
+    - all keywords are case sensitive and most are in ALL-CAPS
+
+    - input is all free format
+
+    - blank lines will be ignored
+
+
+    - Comment lines can be added to parameter data sections by
+      beginning the line with the '#' symbol.
+        e.g.
+           H          H       1.0080
+           HC         H       1.0080
+                 #  example of comment line denoted with # mark.
+           H1         H       1.0080
+           H2         H       1.0080
+
+
+ ATOM TYPES:  (e.g.  OW, CT, Csp2)
+    - can be a maximum of four characters long, with no spaces.
+    - the atom types are case sensitive.
+    - can contain letters, numbers and other characters except ',' '.' or
+      '=' and tabs.
+
+        example of atom types that are not compatible with the program
+                C.3
+                C 3
+                C=3
+                C_sp3
+
+        example of atom types that are GOOD
+                C_3
+                C3
+                Csp3
+                C*
+
+    - wild cards can be specified with the asterisk i.e. '*'
+
+    - wild cards can be specified for angles, torsions and out-of-plane bends.
+      CAUTION:  When using wild cards, place the wild cards at the beginning
+                of the data section, beggining with the parameters with
+                the most wild cards to those with the least wild cards.
+
+           e.g.
+                 *    C_3  *       100.310   111.000     Simple Harmonic
+                 *    C_3  C_3     100.310   111.000     Simple Harmonic
+                 C_2  C_3  C_3     100.310   111.000     Simple Harmonic
+
+                If this ordering is not followed, then the wild card
+                parameters will over-ride the specific parameters.
+
+
+    - If dummy atoms are used by the QM program, they are specified by
+      the 'Xx' or 'XX' atom type.  They will have no non-bonded interactions.
+      Additionally, do not specify any bonds to the dummy atoms in the
+      connection table, or the program will look for the appropriate
+      parameters.
+
+*************************************************************************
+*************************************************************************
+
+
+FORCE_FIELD_SETTINGS
+=================================
+ ELSTAT_1-4_SCALE       1.0000
+ ELSTAT_NB_CUTOFF       none
+ VDW_1-4_SCALE          1.0000
+ VDW_DEFAULT_POTENTIAL  1         (1:6-12   2:exp-6  3:exp purely repulsive)
+ VDW_NB_CUTOFF          none
+ DIELECTRIC_CONSTANT    1.000 
+ DIELECTRIC_TYPE        constant 
+=================================
+
+
+
+MASSES & ATOM LABELS
+--------------------------------
+force_field    atomic
+ atom_type     symbol    mass        NOTES
+================================
+    C_3          C      12.0110      sp3 hybridized carbon
+    C_2          C      12.0110      sp2 hybridized carbon
+    C_1          C      12.0110      sp1 hybridized carbon
+    C_ar         C      12.0110      aromatic 
+    C_ca         C      12.0110      MS ADDED   cationic ?? 
+    C_           C      12.0110      MS ADDED   ???????????
+    N_4          N      14.0070      MS ADDED
+    N_3          N      14.0070
+    N_2          N      14.0070
+    N_1          N      14.0070
+    O_3          O      15.9990
+    O_2          O      15.9990
+    O_co         O      15.9990     MS ADDED
+    N_ar         N      14.0070
+    P_3          P      30.9740
+    H            H       1.0080
+    Br           Br     79.9040
+    Cl           Cl     35.4530
+    F            F      18.9980
+    I            I     126.9000
+    N_pl         N      14.0070       N.pl3
+    LP           LP      3.0000
+    Na           Na     22.9900
+    K            K      39.1020
+    Ca           Ca     40.0800
+    Li           Li      6.9410
+    Al           Al     26.9800
+    Si           Si     28.0900
+    N_am         N      14.0070
+    S_o          S      32.0600   MS corrected
+    S_o2         S      32.0600   MS corrected
+    S_3          S      32.0600
+    S_2          S      32.0600
+    N_3          N      14.0070
+    O_2          O      15.9990
+    C_2          C      12.0110
+    H            H       1.0080
+    O_3          O      15.9990
+    Xx          Xx       1.0000   dummy
+    XX          Xx       1.0000   dummy
+    xx          Xx       1.0000   dummy
+================================
+
+
+BONDS   Ebond = 0.5*K(r-ro)**2   
+--------------------------------
+ Atoms      pot   
+i  -   j    type     K      R       NOTES
+================================
+C_1   C_1    1    1400.00  1.204  JL_EST                                
+Br    C_2    1     500.00  1.890  EXP                                   
+C_1   C_2    1    1340.00  1.440  *                                     
+C_2   C_2    1    1340.00  1.335  WHITE_77                              
+C_1   C_3    1     640.00  1.458  *                                     
+C_2   C_3    1     639.00  1.501  WHITE_75                              
+C_3   C_3    1     633.60  1.540  *                                     
+Br    C_ar   1     500.00  1.850  *                                     
+C_1   C_ar   1    1340.00  1.440  *                                     
+C_2   C_ar   1    1340.00  1.510  *                                     
+C_3   C_ar   1     640.00  1.525  *                                     
+C_ar  C_ar   1    1400.00  1.395  *                                     
+C_2   Cl     1     520.00  1.750  *                                     
+C_3   Cl     1     600.00  1.767  *                                     
+C_ar  Cl     1     513.36  1.750  *                                     
+C_2   F      1    1200.00  1.330  *                                     
+C_3   F      1     600.00  1.360  *                                     
+C_ar  F      1     500.00  1.330  *                                     
+C_1   H      1     700.00  1.056  JL_EST                                
+C_2   H      1     692.00  1.089  *                                     
+C_3   H      1     662.40  1.100  WHITE_77                              
+C_ar  H      1     692.00  1.084  *                                     
+C_ar  I      1     490.00  2.050  *                                     
+C_1   N_1    1    1600.00  1.158  *                                     
+C_1   N_2    1    1300.00  1.330  *                                     
+C_2   N_2    1    1300.00  1.440  *                                     
+C_3   N_2    1     760.20  1.440  *                                     
+C_ar  N_2    1    1305.94  1.346  *                                     
+N_2   N_2    1    1305.94  1.346  *                                     
+C_2   N_3    1    1300.00  1.330  EXP                                   
+C_3   N_3    1     760.00  1.470  *                                     
+C_ar  N_3    1     720.00  1.410  EXP                                   
+H     N_3    1     692.00  1.080  *                                     
+H     N_2    1     692.00  1.080  MS ADDED
+C_2   N_4    1    1300.00  1.330  *                                     
+C_3   N_4    1     760.00  1.470  *                                     
+C_ar  N_4    1     720.00  1.410  *                                     
+C_2   N_am   1     870.10  1.345  *                                     
+C_3   N_am   1     677.60  1.450  *                                     
+C_ar  N_am   1    1090.08  1.416  *                                     
+H     N_am   1     700.00  1.000  *                                     
+N_2   N_am   1     667.60  1.440  *                                     
+N_am  N_am   1     744.48  1.450  *                                     
+C_ar  N_ar   1    1305.94  1.346  *                                     
+N_ar  N_ar   1    1400.00  1.330  *                                     
+C_2   N_pl   1    1200.00  1.300  *                                     
+C_3   N_pl   1     676.00  1.450  *                                     
+C_ar  N_pl   1    1306.00  1.350  *                                     
+H     N_pl   1     692.00  1.030  *                                     
+N_2   N_pl   1    1305.94  1.350  EXP                                   
+C_1   O_2    1    1555.20  1.207  *                                     
+C_2   O_2    1    1555.20  1.220  *                                     
+N_am  O_2    1    1120.00  1.240  *                                     
+N_pl  O_2    1     680.00  1.210  EXP                                   
+C_1   O_3    1     700.00  1.360  *                                     
+C_2   O_3    1     699.84  1.330  *                                     
+C_3   O_3    1     618.90  1.430  *                                     
+C_ar  O_3    1     700.00  1.390  *                                     
+H     O_3    1    1007.50  0.950  *                                     
+N_2   O_3    1    1200.00  1.405  *                                     
+N_pl  O_3    1     620.00  1.400  EXP                                   
+O_3   O_3    1    1172.16  1.480  *                                     
+C_3   P_3    1     407.60  1.830  *                                     
+O_2   P_3    1    1400.00  1.490  *                                     
+O_3   P_3    1     800.00  1.600  *                                     
+C_2   S_2    1     400.00  1.710  *                                     
+C_3   S_2    1     381.60  1.800  *                                     
+C_ar  S_2    1     700.00  1.740  *                                     
+C_2   S_3    1     360.00  1.780  *                                     MS corrected S.3
+C_3   S_3    1     381.60  1.817  *                                     
+C_ar  S_3    1     360.00  1.770  *                                     
+N_3   S_3    1     360.00  1.625  *                                     
+N_4   S_3    1     360.00  1.625  *                                     
+O_2   S_3    1     600.00  1.450  *                                     
+S_3   S_3    1     600.00  2.030  EXP                                   
+C_2   S_o    1     360.00  1.710  TRIPOS_86                             
+C_3   S_o    1     381.60  1.800  TRIPOS_86                             
+O_2   S_o    1     600.00  1.450  *                                     
+O_3   S_o    1     600.00  1.500  *                                     
+C_3   S_o2   1     381.60  1.800  TRIPOS_86                             
+O_2   S_o2   1     600.00  1.450  TRIPOS_86                             
+O_3   S_o2   1     600.00  1.500  *                                     
+================================
+
+
+BENDS    Ebend = 0.5*k(a-ao)^2
+------------------------------------
+    Atoms      pot 
+i  -  j  - k   type     K     theta   NOTES
+====================================
+*    C_1  *      1   131.31   180.00  *
+*    C_2  *      1    78.79   120.00  WHITE_77
+*    C_ca *      1    78.79   120.00  WHITE_77
+*    C_3  *      1    65.66   109.50  WHITE_77
+*    C_ar *      1    78.79   120.00  *
+*    N_1  *      1   262.62   180.00  *
+*    N_2  *      1   131.31   120.00  *
+*    N_3  *      1   131.31   109.50  *
+*    N_4  *      1    32.83   109.50  TRIPOS_86
+*    N_am *      1    65.66   120.00  *
+*    N_pl *      1   131.31   120.00  *
+*    O_3  *      1    65.66   109.50  *
+*    P_3  *      1    65.66   109.50  *
+*    S_2  *      1   131.31   110.00  *
+*    S_3  *      1    65.66    97.00  *
+*    C_2  O_co   1    78.79   120.00  MAC91
+*    C_2  H      1    39.39   120.00  JL_EST
+*    C_3  H      1    52.52   109.50  WHITE_77
+*    S_o  O_2    1   131.31   107.00  TRIPOS_86
+*    S_o2 O_2    1   131.31   107.00  TRIPOS_86
+C_1  C_1  C_2    1   131.31   180.00  JL_ES_                        
+C_2  C_1  N_1    1   131.31   180.00  *                             
+C_3  C_1  N_1    1   131.31   180.00  *                             
+C_ar C_1  N_1    1   131.31   180.00  *                             
+N_1  C_1  O_3    1   131.31   180.00  *                             
+Br   C_2  Br     1    65.66   120.00  EXP                           
+Br   C_2  C_2    1   118.18   120.00  EXP                           
+C_2  C_2  C_2    1    59.09   121.70  *                             
+C_1  C_2  C_3    1    78.79   120.00  JL_ES_                        
+C_2  C_2  C_3    1    78.79   121.00  WHITE_77                      
+C_3  C_2  C_3    1   151.01   116.40  WHITE_77                      
+C_1  C_2  C_ar   1    78.79   120.00  *                             
+C_2  C_2  C_ar   1    85.35   120.00  *                             
+C_3  C_2  C_ar   1    78.79   120.00  EXP                           
+C_ar C_2  C_ar   1    78.79   120.00  *                             
+C_2  C_2  C_     1   118.18   120.00  *                             
+C_ar C_2  C_     1   118.18   120.00  *                             
+C_   C_2  C_     1    98.48   122.00  *                             
+C_1  C_2  N_2    1   229.80   123.00  *                             
+C_2  C_2  N_2    1    78.79   120.00  *                             
+C_3  C_2  N_2    1    65.66   118.00  *                             
+C_ar C_2  N_2    1   131.31   120.00  *                             
+C_2  C_2  N_3    1    78.79   120.00  *                             
+C_3  C_2  N_3    1   131.31   118.00  EXP                           
+N_2  C_2  N_3    1    98.48   121.80  EXP                           
+N_3  C_2  N_3    1    98.48   116.40  EXP                           
+C_2  C_2  N_am   1    78.79   120.00  *                             
+C_3  C_2  N_am   1    65.66   117.00  WHITE_75                      
+C_ar C_2  N_am   1   131.31   120.00  *                             
+N_2  C_2  N_am   1   229.80   123.00  *                             
+N_am C_2  N_am   1    98.48   120.00  *                             
+C_2  C_2  N_pl   1    78.79   120.00  *                             
+C_3  C_2  N_pl   1    65.66   117.00  EXP                           
+N_2  C_2  N_pl   1   229.80   123.00  EXP                           
+C_1  C_2  O_2    1   196.97   120.00  JL_ES_                        
+C_1  C_2  O_co   1   196.97   120.00  MAC_1                         
+C_2  C_2  O_2    1    85.35   120.00  *                             
+C_2  C_2  O_co   1    85.35   120.00  MAC_1                         
+C_3  C_2  O_2    1    85.35   120.00  *                             
+C_3  C_2  O_co   1    85.35   118.00  MAC_1                         
+C_ar C_2  O_2    1    85.35   120.00  *                             
+C_ar C_2  O_co   1    85.35   120.00  MAC_1                         
+N_3  C_2  O_2    1    85.35   120.00  EXP                           
+N_3  C_2  O_co   1    85.35   120.00  MAC_1                         
+N_am C_2  O_2    1    98.48   123.00  WHITE_75                      
+N_am C_2  O_co   1    98.48   123.00  MAC_1                         
+N_pl C_2  O_2    1    98.48   123.00  EXP                           
+N_pl C_2  O_co   1    98.48   123.00  MAC_1                         
+C_2  C_2  O_3    1   236.36   120.00  *                             
+C_3  C_2  O_3    1    98.48   114.00  *                             
+C_ar C_2  O_3    1    98.48   120.00  *                             
+N_am C_2  O_3    1    45.96   110.50  *                             
+O_2  C_2  O_3    1    98.48   120.00  *                             
+O_co C_2  O_co   1    98.48   124.00  MAC_1                         
+N_2  C_2  S_3    1    91.92   125.60  *                             
+N_am C_2  S_3    1    98.48   111.50  *                             
+O_2  C_2  S_3    1    52.52   125.00  *                             
+O_co C_2  S_3    1    52.52   125.00  MAC_1                         
+C_2  C_3  C_2    1    59.09   109.50  *                             
+C_1  C_3  C_3    1    78.79   109.50  *                             
+C_2  C_3  C_3    1    59.09   109.50  WHITE_75                      
+C_3  C_3  C_3    1    78.79   109.50  *                             
+C_2  C_3  C_ar   1    59.09   109.47  *                             
+C_3  C_3  C_ar   1    78.79   109.50  *                             
+C_ar C_3  C_ar   1    59.09   109.50  *                             
+C_3  C_3  C_     1    65.66   109.50  *                             
+C_   C_3  C_     1    65.66   109.50  *                             
+C_ar C_3  F      1    78.79   110.00  JL_ES_                        
+F    C_3  F      1   131.31   109.50  *                             
+C_2  C_3  H      1    52.52   110.00  WHITE_75                      
+H    C_3  H      1    78.79   109.50  WHITE_75                      
+C_3  C_3  N_2    1    59.09   109.50  *                             
+C_2  C_3  N_3    1    59.09   109.50  *                             
+C_3  C_3  N_3    1    78.79   109.50  *                             
+C_ar C_3  N_3    1    59.09   109.50  *                             
+C_2  C_3  N_am   1    72.22   109.50  *                             
+C_3  C_3  N_am   1    59.09   109.50  *                             
+C_ar C_3  N_am   1    65.66   109.50  EXP                           
+H    C_3  N_am   1    65.66   110.00  WHITE_75                      
+N_2  C_3  N_am   1    65.66   109.50  EXP                           
+N_am C_3  N_am   1   131.31   109.50  *                             
+F    C_3  N_ar   1   131.31   109.50  *                             
+C_2  C_3  N_pl   1    59.09   109.50  *                             
+C_3  C_3  N_pl   1    65.66   109.50  *                             
+C_ar C_3  N_pl   1    65.66   109.50  *                             
+C_2  C_3  O_3    1    72.22   109.50  *                             
+C_3  C_3  O_3    1    72.22   109.50  *                             
+C_ar C_3  O_3    1    59.09   109.50  *                             
+N_am C_3  O_3    1    65.66   109.50  *                             
+O_3  C_3  O_3    1    65.66   109.50  *                             
+C_3  C_3  P_3    1    45.96   112.00  *                             
+C_2  C_3  S_2    1    59.09   109.50  *                             
+C_3  C_3  S_2    1    59.09   109.50  *                             
+N_am C_3  S_2    1   131.31   109.50  *                             
+C_2  C_3  S_3    1    59.09   107.80  *                             
+C_3  C_3  S_3    1    59.09   107.80  *                             
+C_ar C_3  S_3    1    59.09   107.80  *                             
+N_am C_3  S_3    1    78.79   109.50  JL_ES_                        
+O_3  C_3  S_3    1    65.66   107.80  *                             
+Br   C_ar C_ar   1   118.18   120.00  *                             
+C_2  C_ar C_ar   1    78.79   120.00  *                             
+C_3  C_ar C_ar   1    78.79   120.00  *                             
+C_ar C_ar C_ar   1    78.79   120.00  *                             
+C_ar C_ar C_     1   118.18   120.00  *                             
+C_ar C_ar F      1   118.18   120.00  *                             
+C_ar C_ar I      1   118.18   120.00  *                             
+C_3  C_ar N_2    1   131.31   120.00  *                             
+C_ar C_ar N_2    1   131.31   120.00  *                             
+N_2  C_ar N_2    1   131.31   120.00  *                             
+C_ar C_ar N_3    1   203.53   120.00  EXP                           
+C_ar C_ar N_am   1   203.53   120.00  *                             
+N_2  C_ar N_am   1   131.31   118.00  *                             
+N_am C_ar N_am   1    98.48   120.00  *                             
+C_2  C_ar N_ar   1   131.31   120.00  EXP                           
+C_3  C_ar N_ar   1   131.31   120.00  EXP                           
+C_ar C_ar N_ar   1    78.79   120.00  EXP                           
+N_am C_ar N_ar   1   131.31   118.00  EXP                           
+C_3  C_ar N_pl   1   131.31   120.00  *                             
+C_ar C_ar N_pl   1   131.31   120.00  *                             
+N_2  C_ar N_pl   1   131.31   120.00  *                             
+N_am C_ar N_pl   1   131.31   120.00  *                             
+N_pl C_ar N_pl   1   131.31   120.00  *                             
+C_3  C_ar O_3    1   131.31   120.00  *                             
+C_ar C_ar O_3    1   203.53   120.00  *                             
+C_ar C_ar S_2    1   203.53   120.00  *                             
+C_ar C_ar S_3    1   203.53   120.00  *                             
+C_1  N_2  C_2    1   131.31   120.00  *                             
+C_2  N_2  C_2    1   262.62   123.00  EXP                           
+C_2  N_2  C_3    1   269.19   110.00  *                             
+C_2  N_2  C_ar   1   262.62   123.00  *                             
+C_3  N_2  C_ar   1   269.19   110.00  *                             
+C_ar N_2  C_ar   1   131.31   120.00  *                             
+C_2  N_2  N_2    1   144.44   112.00  *                             
+C_3  N_2  N_2    1   131.31   118.00  *                             
+C_ar N_2  N_2    1   131.31   118.00  *                             
+C_2  N_2  N_am   1   144.44   120.00  EXP                           
+C_2  N_2  N_pl   1   144.44   120.00  EXP                           
+C_2  N_2  O_3    1   144.44   105.00  EXP                           
+C_2  N_3  C_3    1   131.31   110.00  EXP                           
+C_3  N_3  C_3    1    59.09   109.50  *                             
+C_3  N_3  C_ar   1   131.31   118.00  EXP                           
+C_ar N_3  C_ar   1   131.31   118.00  EXP                           
+C_3  N_3  S_2    1   131.31   109.50  *                             
+C_3  N_4  C_3    1    59.09   109.50  *                             
+C_2  N_am C_2    1    59.09   120.00  *                             
+C_2  N_am C_3    1   144.44   118.00  *                             
+C_3  N_am C_3    1   131.31   122.00  *                             
+C_2  N_am C_ar   1   170.71   120.00  *                             
+C_3  N_am C_ar   1   144.44   118.00  *                             
+C_ar N_am C_ar   1   144.44   120.00  *                             
+C_2  N_am H      1    52.52   119.00  WHITE_75                      
+C_3  N_am H      1    65.66   117.00  WHITE_75                      
+C_2  N_am N_2    1    59.09   120.00  EXP                           
+C_3  N_am N_2    1    78.79   120.00  *                             
+C_ar N_am N_2    1   144.44   109.50  *                             
+C_2  N_am N_am   1    59.09   120.00  *                             
+C_3  N_am N_am   1    78.79   120.00  *                             
+C_ar N_am N_am   1   170.71   120.00  *                             
+C_2  N_am O_2    1    78.79   120.00  *                             
+C_3  N_am O_2    1    65.66   120.00  *                             
+C_ar N_am O_2    1    78.79   120.00  *                             
+O_2  N_am O_2    1    65.66   120.00  *                             
+C_ar N_ar C_ar   1   131.31   120.00  EXP                           
+C_2  N_pl C_2    1   131.31   120.00  EXP                           
+C_2  N_pl C_ar   1   131.31   120.00  EXP                           
+C_3  N_pl C_ar   1   131.31   120.00  *                             
+C_ar N_pl C_ar   1   131.31   120.00  *                             
+C_2  N_pl N_2    1    59.09   120.00  EXP                           
+C_ar N_pl N_2    1    59.09   120.00  EXP                           
+C_2  N_pl O_2    1   131.31   112.00  EXP                           
+O_2  N_pl O_2    1   196.97   127.00  EXP                           
+C_2  O_3  C_2    1    65.66   110.00  *                             
+C_2  O_3  C_3    1   144.44   109.50  *                             
+C_3  O_3  C_3    1   144.44   109.50  *                             
+C_2  O_3  C_ar   1    65.66   110.00  *                             
+C_3  O_3  C_ar   1    65.66   110.00  *                             
+C_ar O_3  C_ar   1    65.66   110.00  *                             
+C_2  O_3  N_2    1   144.44   108.50  EXP                           
+C_3  O_3  O_3    1   308.58   103.90  *                             
+C_3  O_3  P_3    1    32.83   120.00  *                             
+H    O_3  H      1    65.66   104.50  MC_0                          
+O_2  P_3  O_2    1    65.66   109.50  *                             
+Xx   P_3  O_3    1    45.96   109.50  *                             MS corrected Du for Xx
+O_2  P_3  O_3    1    65.66   109.50  *                             
+O_3  P_3  O_3    1    65.66   109.50  *                             
+C_3  S_2  N_3    1   131.31   111.00  *                             
+C_ar S_2  N_3    1   131.31   111.00  *                             
+C_2  S_3  C_3    1    72.22    94.30  *                             
+C_3  S_3  C_3    1    65.66    98.00  *                             
+C_ar S_3  C_ar   1   203.53    97.50  *                             
+C_3  S_3  S_3    1   196.97   102.90  EXP                           
+O_2  S_o2 O_2    1   131.31   118.00  TRIP___86                     
+====================================
+
+
+TORSIONS     Etors= 0.5 K (1 + AA * COS(per*phi))  where AA = the sign of per
+-------------------------------------------
+    Atoms           pot               
+i   - j  - k -  l  type      k        per     NOTES
+===========================================
+ *   C_1  C_1  *     2     0.0000     1.0     JL_ES_              
+ *   C_1  C_2  *     2     0.0000     1.0     *                   
+ *   C_2  C_2  *     2    12.5000    -2.0     WHITE_77            
+ *   C_2  C_ca *     2     1.4240    -2.0     *                   
+ *   C_1  C_3  *     2     0.0000     1.0     *                   
+ *   C_2  C_3  *     2     0.1200    -3.0     *                   
+ *   C_3  C_3  *     2     0.2000     3.0     *                   
+ *   C_1  C_ar *     2     0.0000     1.0     *                   
+ *   C_2  C_ar *     2     1.6000    -2.0     *                   
+ *   C_3  C_ar *     2     0.1200    -3.0     *                   
+ *   C_ar C_ar *     2     2.0000    -2.0     *    CHECK COMP
+ *   C_1  N_2  *     2     0.0000     1.0     *                   
+ *   C_2  N_2  *     2    12.0000    -2.0     *                   
+ *   C_3  N_2  *     2     0.4000    -3.0     *                   
+ *   C_ar N_2  *     2     1.6000    -2.0     *                   
+ *   N_2  N_2  *     2     1.6000    -2.0     *                   
+ *   C_2  N_3  *     2     0.1200    -3.0     *                   
+ *   C_3  N_3  *     2     0.2000     3.0     *                   
+ *   C_ar N_3  *     2     0.1200    -3.0     *                   
+ *   N_3  N_3  *     2     0.2000     3.0     *                   
+ *   C_2  N_am *     2     2.0000     3.0     *                   
+ *   C_3  N_am *     2     0.2000     3.0     *                   
+ *   C_ar N_am *     2     1.6000    -2.0     *                   
+ *   N_2  N_am *     2     1.6000    -2.0     *                   
+ *   N_3  N_am *     2     0.1200    -3.0     *                   
+ *   N_am N_am *     2     1.6000    -2.0     *                   
+ *   C_ar N_ar *     2     2.0000    -2.0     *                   
+*    C_2  N_pl *     2    12.0000    -2.0     *                   
+*    C_ca N_pl *     2     2.0000     1.0     *                   
+*    C_3  N_pl *     2     0.4000    -3.0     *                   
+*    C_ar N_pl *     2     1.6000    -2.0     *                   
+*    N_2  N_pl *     2     1.6000    -2.0     *                   
+*    N_pl N_pl *     2     1.6000    -2.0     *                   
+*    C_1  O_3  *     2     0.0000     1.0     *                   
+*    C_2  O_3  *     2     5.8000    -2.0     *                   
+*    C_3  O_3  *     2     1.2000     3.0     *                   
+*    C_ar O_3  *     2     1.2000    -2.0     *                   
+*    N_2  O_3  *     2     1.0000     2.0     EXP                 
+*    N_3  O_3  *     2     0.2000     3.0     *                   
+*    C_2  P_3  *     2     1.0000    -2.0     *                   
+*    C_3  P_3  *     2     0.4000     3.0     *                   
+*    C_ar P_3  *     2     1.0000     3.0     *                   
+*    O_3  P_3  *     2     0.4000     3.0     *                   
+*    C_2  S_2  *     2     1.0000    -2.0     *                   
+*    C_3  S_2  *     2     0.4000     3.0     *                   
+*    C_ar S_2  *     2     1.0000     3.0     *                   
+*    N_3  S_2  *     2     0.4000     3.0     *                   
+*    C_2  S_3  *     2     1.0000    -2.0     *                   
+*    C_3  S_3  *     2     0.4000     3.0     *                   
+*    C_ar S_3  *     2     1.0000     3.0     *                   
+*    S_3  S_3  *     2     6.7500     2.0     EXP                 
+C_2  C_2  C_3  *     2     0.1260    -3.0     WHITE_77            
+C_3  C_2  C_3  *     2     0.1260     3.0     WHITE_77            
+H    C_2  C_3  *     2     0.2740     3.0     WHITE_77            
+*    C_ar C_ar C_ar  2     2.3500    -2.0     *                   
+*    C_2  C_3  C_2   2     0.1260     3.0     WHITE_77            
+*    C_2  C_3  C_3   2     0.1260     3.0     WHITE_77            
+*    C_2  C_3  H     2     0.2740     3.0     WHITE_77            
+*    C_3  C_3  H     2     0.3200     3.0     MC_88               
+O_2  C_2  C_3  C_3   2     0.7000    -3.0     JL_ES_              
+O_co C_2  C_3  C_3   2     0.7000    -3.0     MAC_1               
+C_2  C_3  C_3  C_2   2     0.0400     3.0     WHITE_77            
+C_2  C_3  C_3  C_3   2     0.1260     3.0     WHITE_77            
+C_3  C_3  C_3  C_3   2     0.5000     3.0     MC_88               
+C_2  C_2  C_3  C_2   2     0.1260    -3.0     WHITE_77            
+C_2  C_2  C_3  H     2     0.2730    -3.0     WHITE_77            
+C_3  C_2  C_3  C_2   2     0.1260     3.0     WHITE_77            
+C_3  C_2  C_3  C_3   2     0.1260     3.0     WHITE_77            
+C_3  C_2  C_3  H     2     0.2740     3.0     WHITE_77            
+H    C_2  C_3  C_2   2     0.2740     3.0     WHITE_77            
+H    C_2  C_3  C_3   2     0.2740     3.0     WHITE_77            
+H    C_2  C_3  H     2     0.2740     3.0     WHITE_77            
+C_2  C_2  C_3  C_3   2     0.1260    -3.0     WHITE_77            
+===========================================
+
+
+OUT-OF-PLANE       Eoop=0.5*K*D^2  where D is the distance above the plane (ang)
+------------------------------
+      Atoms        pot      
+ i - j  - k  - l   type   K          NOTES
+==============================
+ *   *   C_2   *    2    480     TRIPOS_85
+ *   *   C_ca  *    2    480     MAC91      MS corrected to C_ca
+ *   *   C_ar  *    2    630     MCAROM
+ *   *   N_2   *    2    120     TRIPOS_85
+ *   *   N_am  *    2    120     TRIPOS_85
+ *   *   N_ar  *    2    120     TRIPOS_85
+ *   *   N_pl3 *    2    120     TRIPOS_85
+ *   *   N_pl3 *    2    120     TRIPOS_85
+ *   *   C_2   *  1 2.0 180.0  Temporary fix for use with NEWMM
+ *   *   C_ca  *  1 2.0 180.0  Temporary fix for use with NEWMM
+ *   *   C_ar  *  1 3.0 180.0  Temporary fix for use with NEWMM
+ *   *   N_2   *  1 1.0 180.0  Temporary fix for use with NEWMM
+ *   *   N_am  *  1 1.0 180.0  Temporary fix for use with NEWMM
+ *   *   N_ar  *  1 1.0 180.0  Temporary fix for use with NEWMM
+ *   *   N_pl  *  1 1.0 180.0  Temporary fix for use with NEWMM
+==============================
+
+VAN DER WAALS
+------------------------------------------------------------------------
+NOTE: -the convention for R is double what many papers report!!!!
+       see manual for definition of gamma
+      -pair specific parameters can be defined. (i.e. not constructed
+       from the combination rules.)    See manual for details.
+------------------------------------------------------------------------
+  atom(s)      Emin    Rmin   gamma     NOTES
+====================================
+    C_3       0.1070   3.4000  12.00   *                             
+    C_2       0.1070   3.4000  12.00   *                             
+    C_ca      0.1070   3.4000  12.00   *                             
+    C_ar      0.1070   3.4000  12.00   *                             
+    C_1       0.1070   3.4000  12.00   *                             
+    N_3       0.0950   3.1000  12.00   *                             
+    N_2       0.0950   3.1000  12.00   *                             
+    N_1       0.0950   3.1000  12.00   *                             
+    O_3       0.1160   3.0400  12.00   *                             
+    O_2       0.1160   3.0400  12.00   *                             
+    O_co      0.1160   3.0400  12.00   *                             
+    S_3       0.3140   3.6000  12.00   *                             
+    N_ar      0.0950   3.1000  12.00   *                             
+    P_3       0.3140   3.6000  12.00   *                             
+    H         0.0420   3.0000  12.00   *                             
+    Br        0.4340   3.7000  12.00   *                             
+    Cl        0.3140   3.5000  12.00   *                             
+    F         0.1090   2.9400  12.00   *                             
+    I         0.6230   3.9600  12.00   *                             
+    S_2       0.3140   3.6000  12.00   *                             
+    N_pl      0.0950   3.1000  12.00   *                             
+    LP        0.0000   0.0000  12.00   *                             
+    Na        0.4000   2.4000  12.00   *                             
+    K         0.4000   2.4000  12.00   *                             
+    Ca        0.6000   2.4000  12.00   *                             
+    Li        0.4000   2.4000  12.00   *                             
+    Al        0.0420   2.4000  12.00   *                             
+    Xx        0.0000   0.0000  12.00   *                             MS corrected Du for Xx
+    Si        0.0420   4.2000  12.00   *                             
+    N_am      0.0950   3.1000  12.00   *                             
+    S_o       0.3140   3.4000  12.00   *                             
+    S_o2      0.3140   3.4000  12.00   *                             
+    N_4       0.0950   3.1000  12.00   *                             
+====================================
+    O_t3      0.1521   3.5365  12.00   *                             MS deleted
+    H_t3      0.0000   2.0160  12.00   *                             MS deleted
+

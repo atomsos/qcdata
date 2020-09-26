@@ -1,0 +1,109 @@
+# The parameters below are for the Lennard-Jones Potenial found in the AMBER force field.
+#  Cornell, et al.: J. Am. Chem. Soc., (1995), 117, 5179-5197. 
+#
+# The current code to read this file allow you to add new parameters for an atom type 
+# with the atomic symbol as the label. (labels are case sensitive)
+# The user may edit the avaliable parameters to your problem, but 
+# noting that not all parameters are read in by the code. 
+
+#Label	E(kcal/mol)	R(ang.) 	Notes
+VDWPAR
+H	0.015700	0.600000	Ferguson base pair geom.             
+HO	0.000000	0.000000	OPLS Jorgensen, JACS,110,(1988),1657              
+HS	0.015700	0.600000	W. Cornell CH3SH --> CH3OH FEP           
+HC	0.015700	1.487000	OPLS                
+H1	0.015700	1.387000	Veenstra et al JCC,8,(1992),963             
+H2	0.015700	1.287000	Veenstra et al JCC,8,(1992),963             
+H3	0.015700	1.187000	Veenstra et al JCC,8,(1992),963             
+HP	0.015700	1.100000	Veenstra et al JCC,8,(1992),963             
+HA	0.015000	1.459000	Spellmeyer                
+H4	0.015000	1.409000	Spellmeyer, one electrowithdr. neighb             
+H5	0.015000	1.359000	Spellmeyer, two electrowithdr. neighb             
+HW	0.000000	0.000000	TIP3P water model              
+O	0.210000	1.661200	OPLS                
+O2	0.210000	1.661200	OPLS                
+OW	0.152000	1.768300	TIP3P water model              
+OH	0.210400	1.721000	OPLS                
+OS	0.170000	1.683700	OPLS ether               
+CT	0.109400	1.908000	Spellmeyer                
+CA	0.086000	1.908000	Spellmeyer                
+CM	0.086000	1.908000	Spellmeyer                
+CW	0.086000	1.908000	Cornell et al. (1995), added 11-7-2001           
+CC	0.086000	1.908000	Cornell et al. (1995), added 11-7-2001           
+CR	0.086000	1.908000	Cornell et al. (1995), added 11-7-2001           
+C*	0.086000	1.908000	Cornell et al. (1995), added 11-7-2001           
+CN	0.086000	1.908000	Cornell et al. (1995), added 11-7-2001           
+CB	0.086000	1.908000	Cornell et al. (1995), added 11-7-2001           
+CV	0.086000	1.908000	Cornell et al. (1995), added 11-7-2001           
+C	0.086000	1.908000	OPLS                
+CD	0.086000	1.908000	HEME vdw params (M. Swart added)           
+CX	0.086000	1.908000	HEME vdw params (M. Swart added)           
+CY	0.086000	1.908000	HEME vdw params (M. Swart added)           
+N	0.170000	1.824000	OPLS                
+NA	0.170000	1.824000	OPLS                
+NB	0.170000	1.824000	OPLS                
+NC	0.170000	1.824000	OPLS                
+N2	0.170000	1.824000	OPLS                
+N3	0.170000	1.824000	OPLS                
+N*	0.170000	1.824000	OPLS                
+NO	0.170000	1.824000	HEME vdw params (M. Swart added)           
+NP	0.170000	1.824000	HEME vdw params (M. Swart added)           
+S	0.250000	2.000000	W. Cornell CH3SH and CH3SCH3 FEP's           
+SH	0.250000	2.000000	W. Cornell CH3SH and CH3SCH3 FEP's           
+P	0.200000	2.100000	JCC,7,(1986),230;                
+IM	0.100000	2.470000	Cl- Smith & Dang, JCP 1994,100:5,3757           
+Li	0.018300	1.137000	Li+ Aqvist JPC 1990,94,8021. (adapted            
+IP	0.002800	1.868000	Na+ Aqvist JPC 1990,94,8021. (adapted            
+K	0.000300	2.658000	K+ Aqvist JPC 1990,94,8021. (adapted            
+Rb	0.000200	2.956000	Rb+ Aqvist JPC 1990,94,8021. (adapted            
+Cs	0.000100	3.395000	Cs+ Aqvist JPC 1990,94,8021. (adapted            
+I	0.400000	2.350000	JCC,7,(1986),230;                
+F	0.061000	1.750000	Gough et al. JCC 13,(1992),963.            
+IB	0.100000	5.000000	solvated ion for vacuum approximation            
+FE_h	0.050000	1.200000	Heme parameter file (see http://pharmacy.man.ac.uk/amber/)            
+CZ	0.109400	1.908000	MS added 11-10-2004 for chloroform            
+CL	0.325000	2.000000	MS added 11-10-2004 for chloroform            
+HZ	0.015700	1.187000	MS added 11-10-2004 for chloroform            
+SC	0.195750	2.570000	MM2 parameters (M. Swart added)            
+TI	0.249750	2.350000	MM2 parameters (M. Swart added)            
+V	0.310500	2.250000	MM2 parameters (M. Swart added)            
+CR_e	0.339750	2.210000	MM2 parameters (M. Swart added)            
+Cr	0.339750	2.210000	MM2 parameters (M. Swart added)            
+MN	0.346500	2.200000	MM2 parameters (M. Swart added)            
+Mn	0.346500	2.200000	MM2 parameters (M. Swart added)            
+FE	0.353250	2.190000	MM2 parameters (M. Swart added)            
+Fe	0.353250	2.190000	MM2 parameters (M. Swart added)            
+CO	0.353250	2.190000	MM2 parameters (M. Swart added)            
+Co	0.353250	2.190000	MM2 parameters (M. Swart added)            
+NI	0.360000	2.180000	MM2 parameters (M. Swart added)            
+Ni	0.360000	2.180000	MM2 parameters (M. Swart added)            
+CU	0.333000	2.220000	MM2 parameters (M. Swart added)            
+Cu	0.333000	2.220000	MM2 parameters (M. Swart added)            
+ZN	0.310500	2.250000	MM2 parameters (M. Swart added)            
+Zn	0.310500	2.250000	MM2 parameters (M. Swart added)            
+Cl	0.265000	1.948000	jlp48 added (AMBER 10)            
+Br	0.320000	2.220000	jlp48 added (AMBER 10)            
+Ag	1.720400	1.720000	jlp48 added (R = vdw radius & E = C6_D3 / ( 2 * R_vdw )
+Au	1.754400	1.660000	jlp48 added (R = vdw radius & E = C6_D3 / ( 2 * R_vdw )
+END
+
+
+# Below are the coordination dependent parameters used in the Lennard-Jones Potenial
+#  more details in Payton, et al.: J. Chem. Phys. (2012), 136, 214103. 
+
+# All parameters in the COORDPAR and CHEMPAR block are in atomic units
+
+#Label  CN_max   r_max(Bohr)  r_min(Bohr)    E_0(hartree)     E_1(hartree)    R_0(Bohr)	  R_1(Bohr)  
+COORDPAR
+Ag	12.0     9.4486       5.6692         0.003000	      0.000800	      3.250000	   3.650000  
+Au	12.0     9.4486       5.6692         0.006000	      0.002400	      3.136600	   3.522700  
+END
+
+#Label	r_cutoff(Bohr)  E_0(hartree)	E_1(hartree)	R_0(Bohr)	R_1(Bohr)  
+CHEMPAR                                                        
+N       4.913           0.275000        0.052500        0.800000        0.900000   
+END
+
+
+# DO NOT DELETE THIS LAST LINE 
+END_OF_FILE

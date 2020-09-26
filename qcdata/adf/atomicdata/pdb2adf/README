@@ -1,0 +1,112 @@
+###################################################################################################
+# README file belonging to $ADFRESOURCES/pdb2adf directory
+# version 2005.01, March 2005
+#
+# this directory makes use of AMBER parameter files,
+# see http://amber.scripps.edu/ for more information on AMBER
+###################################################################################################
+
+Current contents:
+-----------------
+
+CHL  CU1  F1   HEM  K    SO4  amdata  ntdata          p2abox.CHL  p2abox.MOH
+CU   CU2  H2O  HOH  MOH  SOL  ctdata  p2a_adf_header  p2abox.HOH  p2abox.solvents
+
+Fragment files:
+---------------
+
+CHL             -  chloroform
+CU              -  copper(II) ion
+CU1             -  copper(I) ion
+CU2             -  copper(II) ion
+F1              -  fluoride anion
+H2O             -  water (apart from name identical to HOH or SOL)
+HEM             -  HEME-group with Fe(II)
+HOH             -  water (apart from name identical to H2O or SOL)
+K               -  potassium cation
+MOH             -  methanol
+SO4             -  sulphate anion
+SOL             -  water (apart from name identical to HOH or H2O)
+
+Amino acid residue parameter files:
+-----------------------------------
+
+amdata          -  normal amino acid residues
+ctdata          -  C-terminal amino acid residues
+ntdata          -  N-terminal amino acid residues
+[adapted from files from the AMBER parameter files]
+
+Technical files:
+----------------
+
+p2a_adf_header  -  header file for ADF inputfile
+
+Solvent box parameter files:
+----------------------------
+
+p2abox.solvents -  file with all solvents available
+p2abox.CHL      -  coordinate file for chloroform (CHL) box
+p2abox.HOH      -  coordinate file for water (HOH) box
+p2abox.MOH      -  coordinate file for methanol (MOH) box
+[coordinates taken from AMBER parameter files]
+
+###################################################################################################
+# Description
+###################################################################################################
+
+The fragment and amino acid residue parameter files determine how PDB files are read, which atoms
+are needed, what atomtype they should be, which charge to be used, etc.
+Therefore, creating the parameter files should be done with great care !
+
+The format is not that simple:
+- first a line with the fragment name, comment and optionally the NOCONNECT keyword
+  [if NOCONNECT is found for a fragment, it will not be connected to other fragments/residues
+   by the pdb2adf program]
+- then three lines with DUMMY atoms (only needed for amino acid residues, but for consistency
+  also needed for general fragments)
+- then for each atom in the fragment a line, with the number, PDB name, AMBER atomtype,
+  then an AMBER specific term, the Z-matrix connections and Z-matrix bond/angle/dihedral
+  for making coordinates if not found on PDB, atomic charge, and after an exclamation mark
+  the atoms to which this atom is connected
+  [the latter is not yet operational, but will be added in version 2005.02 of pdb2adf]
+
+For example, the parameter file for water (HOH):
+
+HOH  Water molecule  NOCONNECT
+   1   DUMM  DU    M      0   0   0       0.0000      0.0000      0.0000
+   2   DUMM  DU    M      1   0   0       1.4490      0.0000      0.0000
+   3   DUMM  DU    M      2   1   0       1.5220    111.1000      0.0000
+   4   O     OW    O      0   0   0       0.0000      0.0000      0.0000  -0.8340  !  5  6
+   5   H1    HW    H      4   0   0       0.9572      0.0000      0.0000   0.4170  !  4
+   6   H2    HW    H      4   5   0       0.9572    104.5200      0.0000   0.4170  !  4
+
+The solvent box files contain the coordinates for a number of solvent molecules, that are
+contained in a (usually) cubic box, and which may be used for placing a solvent layer surrounding
+the system that is present in the PDB file.
+The format is simple:
+- first line is comment
+- second line gives the number of atoms, followed by the dimensions of the box
+- then for each atom a line with its PDB name (as defined in the fragment file, see above)
+  and its coordinates (in Angstroms)
+For example, the first five lines of p2abox.HOH:
+
+216 TIP3P water molecules, taken directly from AMBER parameter set
+  648                                 18.774349  18.774349  18.774349
+    O    2.57322   -1.03407   -1.72070
+   H1    2.49262   -1.94861   -1.99153
+   H2    2.15966   -0.53736   -2.42673
+
+###################################################################################################
+# TODO
+###################################################################################################
+
+- prepare all parameter files for including connections (see HOH parameter file after ! sign)
+
+###################################################################################################
+# Questions / remarks
+###################################################################################################
+
+M. Swart, swart@chem.vu.nl
+SCM,      support@scm.com
+
+March, 2005

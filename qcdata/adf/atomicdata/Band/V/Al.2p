@@ -1,0 +1,53 @@
+AtomType Al
+
+DIRAC Al
+ 5  3
+ VALENCE
+ 1S
+ 2S
+ 2P
+ 3S
+ 3P 1
+SubEnd
+
+BasisFunctions
+ 3S   0.95
+ 3S   2.00
+ 3P   0.60
+ 3P   1.50
+ 
+ 3D   1.2
+ 4F   1.8
+SubEnd
+
+FitFunctions
+ 1S  23.00
+ 2S  21.89
+ 2S  12.96
+ 3S  11.37
+ 3S   7.30
+ 4S   6.24
+ 4S   4.23
+ 4S   2.86
+ 5S   2.43
+ 5S   1.71
+ 5S   1.20
+ 2P  16.15
+ 3P  11.98
+ 4P   8.86
+ 4P   5.24
+ 5P   3.90
+ 5P   2.43
+ 5P   1.51
+ 3D  12.41
+ 4D   8.67
+ 4D   4.85
+ 5D   3.43
+ 5D   2.03
+ 5D   1.20
+ 4F   5.00
+ 4F   3.00
+ 5G   4.00
+SubEnd
+
+End

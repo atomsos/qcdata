@@ -1,0 +1,141 @@
+118 19                   Number of atomtypes, number of bond types
+1.00 0.06 0.01 0.01    bondfactor, anglefactor, torsionfactor, vdwfactor
+H  0.30                 Data taken from BINAS 1986, using atomradius (vdwradius for noble gasses)
+He 0.99                 
+Li 1.52
+Be 1.12
+B  0.88
+C  0.77
+N  0.70
+O  0.66
+F  0.64
+Ne 1.60
+Na 1.86
+Mg 1.60
+Al 1.43
+Si 1.17
+P 1.10
+S 1.04
+Cl 0.99
+Ar 1.92
+K 2.31
+Ca 1.97
+Sc 1.60
+Ti 1.46
+V 1.31
+Cr 1.25
+Mn 1.29
+Fe 1.26
+Co 1.25
+Ni 1.24
+Cu 1.28
+Zn 1.33
+Ga 1.41
+Ge 1.22
+As 1.21
+Se 1.17
+Br 1.14
+Kr 1.97
+Rb 2.44
+Sr 2.15
+Y 1.80
+Zr 1.57
+Nb 1.41
+Mo 1.36
+Tc 1.35
+Ru 1.33
+Rh 1.34
+Pd 1.38
+Ag 1.44
+Cd 1.49
+In 1.66
+Sn 1.62
+Sb 1.41
+Te 1.37
+I 1.33
+Xe 2.17
+Cs 2.62
+Ba 2.17
+La 1.88
+Ce 1.818   Data for Ce - Lu from adf libtc/elinsp metallic sphere radii
+Pr 1.824
+Nd 1.814
+Pm 1.834
+Sm 1.804
+Eu 2.084
+Gd 1.804
+Tb 1.773
+Dy 1.781
+Ho 1.762
+Er 1.761
+Tm 1.759
+Yb 1.922
+Lu 1.738
+Hf 1.57
+Ta 1.43
+W 1.37
+Re 1.37
+Os 1.34
+Ir 1.35
+Pt 1.38
+Au 1.44
+Hg 1.52
+Tl 1.71
+Pb 1.75
+Bi 1.70
+Po 1.40
+At 1.40
+Rn 2.40
+Fr 2.70
+Ra 2.20
+Ac 2.00
+Th 1.79  Data for Th - Uuo from adf libtc/elinsp metallic sphere radii
+Pa 1.63
+U 1.56
+Np 1.55
+Pu 1.59
+Am 1.73
+Cm 1.74
+Bk 1.70
+Cf 1.86
+Es 1.86
+Fm 2.00
+Md 2.00
+No 2.00
+Lr 2.00
+Rf 2.00
+Db 2.00
+Sg 2.00
+Bh 2.00
+Hs 2.00
+Mt 2.00
+Ds 2.00
+Rg 2.00
+Cn 2.00
+Uut 2.00
+Fl 2.00
+Uup 2.00
+Lv 2.00
+Uus 2.00
+Uuo 2.00
+
+
+H H 1   0.74 1.0         Data taken from BINAS 1986
+C H 1   1.08 1.0
+C C 1   1.54 1.0
+C C 1.5 1.40 1.0
+C C 2   1.35 1.0
+C C 3   1.21 1.0
+N H 1   1.01 1.0
+N C 1   1.47 1.0
+N C 1.5 1.40 1.0         guess
+N C 3   1.16 1.0
+O H 1   0.96 1.0
+O C 1   1.43 1.0
+O C 1.5 1.28 1.0
+O C 2   1.22 1.0
+O C 3   1.13 1.0
+O N 1.5 1.24 1.0
+O O 1   1.49 1.0
+O O 1.5 1.28 1.0
+O O 2   1.21 1.0

@@ -1,0 +1,50 @@
+AtomType Na
+
+DIRAC Na
+ 4  1
+ VALENCE
+ 1S
+ 2S
+ 2P
+ 3S 1
+SubEnd
+
+BasisFunctions
+ 2S   2.55
+ 2P   1.90
+ 3S   0.55
+ 3S   1.35
+ 3P   0.79
+ 
+ 3D   0.8
+ 4F   1.2
+SubEnd
+
+FitFunctions
+ 1S  19.40
+ 2S  18.23
+ 3S  15.82
+ 3S  10.07
+ 4S   8.53
+ 4S   5.73
+ 4S   3.85
+ 5S   3.24
+ 5S   2.26
+ 5S   1.58
+ 5S   1.10
+ 2P  15.55
+ 3P  11.44
+ 3P   6.25
+ 4P   4.60
+ 4P   2.70
+ 5P   2.00
+ 3D  12.20
+ 3D   6.03
+ 3D   2.98
+ 4D   2.00
+ 4F   5.00
+ 4F   3.00
+ 5G   3.00
+SubEnd
+
+End

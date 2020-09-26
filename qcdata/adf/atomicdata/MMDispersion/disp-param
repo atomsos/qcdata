@@ -1,0 +1,46 @@
+Atom Type    C6  Polar.* Radius  (all values in atomic units)
+________________________________
+C6 built using S-K(1+2) and Halgren(2), and Miller(3) Polar.
+Polar. from Miller(3)
+Radii from Bondi(4)
+H.h         2.83   2.612  2.27
+C.cte      22.67   7.160  3.21   sp3 Carbon
+C.ctr      32.62   9.124  3.21   sp2 Carbon
+C.cbr      54.17  12.795  3.21   sp2 Carbon, rings junction
+C.cdi      30.15   8.658  3.21   sp  Carbon
+N.nte      20.90   6.505  2.93   sp3 Nitrogen
+N.ntr2     23.08   6.951  2.93   sp2 Nitrogen
+N.npi2     25.13   7.356  2.93   planar conjugated Nitrogen (aniline, pyrrole)
+N.ndi      20.64   6.451  2.93   sp  Nitrogen
+O.ote      11.86   4.299  2.87   sp3 Oxygen
+O.otr4     10.02   3.840  2.87   sp2 Oxygen
+O.pi2       3.35   1.849  2.87   planar conjugated Oxygen (furane, formic acid)
+F.f         3.95   1.998  2.78
+P.pte      53.20  10.379  3.40   Phosphate Phosphorus
+S.ste     149.68  20.245  3.40   sp3  Sulfur
+S.str4    207.43  25.165  3.40   sp2  Sulfur
+S.spi2    127.80  18.221  3.40   planar conjugated Sulfur (thiophene)
+Cl.cl     104.58  15.622  3.31
+Br.br     168.44  20.333  3.50
+I.i       436.76  36.542  3.74
+
+Si.si     190.05  24.819  3.97   new
+B.b        33.69   9.715  3.21   new
+
+Grimme(5) atomic parameters
+Polar. derived using S-K and Halgren
+H           2.8    2.6    2.10
+C          28.6    8.4    3.04
+N          19.3    6.2    2.93
+O          12.1    4.4    2.82
+F           9.9    3.7    2.70
+Ne          7.8    3.1    2.61
+---
+*: Polarizability are only required for the S-K combination rule.
+However, a (dummy) value must be supplied even when using SQRT combination rule for a matter of input reading.
+
+1: Slater J.C., Kirkwood J.G.; Phys. Rev, 1931, 37, 682.
+2: Halgren A.T.; JACS, 1992, 114, 7827.
+3: Miller K.J.; JACS, 1990, 112, 8533.
+4: Bondi A.; JPC, 1964, 68, 441.
+5: Grimme S.; J. Comp. Chem., 2004, 25, 1463.

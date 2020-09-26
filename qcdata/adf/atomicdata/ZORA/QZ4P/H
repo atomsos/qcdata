@@ -1,0 +1,50 @@
+Hydrogen (QZ, all electron, 5S 2P 2D)
+ 
+BASIS
+        1S   3.300
+        1S   2.000
+        1S   1.400
+        1S   1.000
+        1S   0.710
+
+2P   2.000
+2P   1.000
+3D   2.500
+3D   1.500
+END
+ 
+CORE    0  0  0  0
+END
+ 
+DESCRIPTION
+ 
+END
+ 
+FIT
+ 1S   6.60
+ 1S   4.62
+ 1S   3.23
+ 1S   2.26
+ 1S   1.58
+ 1S   1.10
+ 1S    .77
+ 2S   1.00
+ 2P   5.30
+ 2P   3.87
+ 2P   2.82
+ 2P   2.06
+ 2P   1.50
+ 3D   5.80
+ 3D   4.07
+ 3D   2.85
+ 3D   2.00
+ 4F   4.50
+ 4F   3.35
+ 4F   2.50
+ 5G   5.00
+ 5G   3.00
+END
+ 
+FITCOEFFICIENTS
+/
+END

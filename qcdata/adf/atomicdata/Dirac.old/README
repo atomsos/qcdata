@@ -1,0 +1,7 @@
+j. autschbach 01/2009: This directory contains
+Dirac inputs pre Jan. 18, 2009. These inputs still work but are mainly kept
+here as a backup. 
+New inputs are in $ADFHOME/atomicdata/Dirac and $ADFHOME/atomicdata/Dirac.gaussian
+for point and Gaussian nuclei, respectively. Nuclear masses now come from
+libtc instead of the input. There is also the option of providing a value for
+the speed of light after the nuclear mass input, otherwise it comes from libtc.

@@ -1,0 +1,35 @@
+   RUBIDIUM ALL ELECTRON DOUBLE ZETA
+
+BASIS
+1S  34.55
+1S  42.55
+2S  14.85
+3S   5.20
+3S   7.60
+4S   2.30
+4S   3.65
+5S    .70
+5S   1.20
+2P  14.00
+2P  20.60
+3P   5.60
+3P   8.55
+4P   1.80
+4P   3.15
+3D   4.80
+3D   9.50
+
+CORE    0  0  0  0
+END
+
+DESCRIPTION
+ 
+END
+
+FIT
+Not generated yet
+END
+
+FITCOEFFICIENTS
+0/
+END

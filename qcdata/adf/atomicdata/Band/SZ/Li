@@ -1,0 +1,30 @@
+AtomType Li
+DIRAC Li
+ 2  0
+VALENCE
+1S
+2S  1
+SubEnd
+BASISFUNCTIONS
+SubEnd
+FITFUNCTIONS
+  1S     8.480000
+  2S     8.450000
+  2S     5.200000
+  3S     4.730000
+  3S     3.140000
+  3S     2.090000
+  3S     1.390000
+  3S     0.920000
+  2P     6.600000
+  2P     2.980000
+  2P     1.340000
+  3P     0.920000
+  3D     4.720000
+  3D     2.080000
+  3D     0.920000
+  4F     5.000000
+  4F     3.500000
+  5G     3.500000
+SubEnd
+End

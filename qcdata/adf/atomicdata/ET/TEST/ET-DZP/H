@@ -1,0 +1,71 @@
+ 3S 1P 0D 0F even-tempered basis for H                                                                                                                                                               
+! Added ZORA tight functions:  0S 0P 0D 0F
+  
+! Normal (nonrelativistic) basis and fit sets consist only of 1S, 2P, 3D, etc. functions 
+! For each l-value the exponents are defined by n, alpha, and beta
+! according to exponent = alpha * beta^i, for i = 1 up to n 
+! 
+! Values for n, alpha, beta for basis 
+! l = 0: n =  3 alpha = 0.425768 beta = 1.500000
+! l = 1: n =  1 alpha = 1.133333 beta = 1.500000
+! 
+! Number of additional tight functions for ZORA calculation 
+! l =  0: nzora =  0
+! l =  1: nzora =  0
+! 
+! Values for n, alpha, beta for fit
+! l =  0: n =  6 alpha = 0.611408 beta = 1.453500
+! l =  1: n =  3 alpha = 1.208916 beta = 1.504500
+! l =  2: n =  6 alpha = 0.863651 beta = 1.428000
+! l =  3: n =  3 alpha = 2.162630 beta = 1.360000
+! l =  4: n =  1 alpha = 3.393665 beta = 1.326000
+! 
+! Number of additional tight S fit functions for ZORA calculation 
+! l =  0: nzora S fit functions = -1
+! 
+  
+ BASIS
+ 1S     1.436967059969902     
+ 1S    0.9579780399799349     
+ 1S    0.6386520266532900     
+ 2P     1.700000047683716     
+ END
+  
+ CORE 0 0 0 0
+ END
+  
+ DESCRIPTION
+  
+ END
+  
+ FIT
+ 1S     5.765290196543392     
+ 1S     3.966487723576393     
+ 1S     2.728921585025338     
+ 1S     1.877482936087997     
+ 1S     1.291697861398563     
+ 1S    0.8886809744423799     
+ 2P     4.116922324824723     
+ 2P     2.736405618951174     
+ 2P     1.818813939305097     
+ 3D     7.323315596765801     
+ 3D     5.128372282911129     
+ 3D     3.591297128276989     
+ 3D     2.514913963353945     
+ 3D     1.761144237627344     
+ 3D     1.233294287965063     
+ 4F     5.440000233650205     
+ 4F     3.999999999999998     
+ 4F     2.941176344263516     
+ 5G     4.500000000000002     
+ END
+  
+ FITCOEFFICIENTS
+   0.0000000E+00
+   0.0000000E+00
+   0.0000000E+00
+   0.0000000E+00
+   0.0000000E+00
+   0.0000000E+00
+ /
+ END

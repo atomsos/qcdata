@@ -1,0 +1,44 @@
+AtomType O
+
+DIRAC O
+ 3 1
+ VALENCE
+ 1S
+ 2S
+ 2P 4
+SubEnd
+
+BasisFunctions
+ 2S   1.72
+ 2S   7.58
+ 2P   1.12
+ 2P   4.08
+ 
+ 3D   2.00
+ 4F   3.0
+SubEnd
+
+FitFunctions
+ 1S  14.72
+ 2S  15.80
+ 2S  10.35
+ 2S   6.78
+ 3S   6.54
+ 3S   4.57
+ 3S   3.20
+ 3S   2.24
+ 2P  11.44
+ 2P   7.05
+ 3P   6.42
+ 3P   4.27
+ 3P   2.84
+ 3D  10.36
+ 3D   6.22
+ 3D   3.73
+ 3D   2.24
+ 4F   6.20
+ 4F   3.70
+ 5G   4.50
+SubEnd
+
+End

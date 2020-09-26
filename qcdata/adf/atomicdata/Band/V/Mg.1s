@@ -1,0 +1,51 @@
+AtomType Mg
+
+DIRAC Mg
+ 4  1
+ VALENCE
+ 1S
+ 2S
+ 2P
+ 3S
+SubEnd
+
+BasisFunctions
+ 2S   2.70
+ 2P   2.35
+ 3S   0.75
+ 3S   1.75
+ 3P   1.50
+ 3P   0.75
+ 
+ 3D   1.06
+ 4F   1.6
+SubEnd
+
+FitFunctions
+ 1S  20.90
+ 2S  20.33
+ 3S  18.14
+ 3S  11.84
+ 4S  10.27
+ 4S   7.05
+ 4S   4.84
+ 5S   4.16
+ 5S   2.96
+ 5S   2.11
+ 5S   1.50
+ 2P  17.55
+ 3P  12.56
+ 3P   6.69
+ 4P   4.80
+ 4P   2.76
+ 5P   2.00
+ 3D  14.20
+ 3D   6.67
+ 3D   3.13
+ 4D   2.00
+ 4F   5.00
+ 4F   3.00
+ 5G   3.50
+SubEnd
+
+End

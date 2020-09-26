@@ -1,0 +1,38 @@
+   TIN ALL ELECTRON DOUBLE ZETA
+
+BASIS
+1S  47.70
+1S  59.65
+2S  20.75
+3S  10.70
+4S   4.25
+4S   6.35
+5S   2.65
+5S   1.55
+2P  19.80
+2P  27.65
+3P   9.10
+3P  12.30
+4P   3.95
+4P   6.20
+5P   1.05
+5P   2.00
+3D   9.00
+3D  15.25
+4D   2.75
+4D   5.25
+
+CORE    0  0  0  0
+END
+
+DESCRIPTION
+ 
+END
+
+FIT
+Not generated yet
+END
+
+FITCOEFFICIENTS
+0/
+END

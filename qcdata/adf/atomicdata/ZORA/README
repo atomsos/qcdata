@@ -1,0 +1,131 @@
+ ZORA relativistic basis sets for the use with the molecular adf-program:
+
+   SZ:   ZORA relativistic single zeta
+   DZ:   ZORA relativistic double zeta
+   DZP:  ZORA relativistic double zeta + 1 polarization function
+   TZP:  ZORA relativistic valence triple zeta + 1 polarization function
+   TZ2P: ZORA relativistic valence triple zeta + 2 polarization function
+   TZ2P+: ZORA relativistic for transition metals Sc-Zn and lanthanides only:
+          as TZ2P, extra d-STO (3d metals), extra f-STO (lanthanides)
+   QZ4P: ZORA relativistic valence quadruple zeta + 4 polarization function
+
+
+ For standard calculations (energies, geometries, etc.) we recommend the
+ following hierarchy of basis sets:
+
+ SZ < DZ < DZP < TZP < TZ2P < TZ2P+ < ../ET/ET-pVQZ < QZ4P
+
+ where the largest and most accurate basis is on the right.
+ Not all basis sets are available for all elements. Some basis sets
+ do not contain frozen-core basis sets.
+
+ DZ and DZP are reasonable default basis sets for time-consuming
+ calculations on large systems for which medium accuracy is sufficient.
+
+ TZP, TZ2P, and TZ2P+ are good default basis sets for high accuracy
+ on medium-sized and small systems.
+
+ ../ET/ET-pVQZ and QZ4P are very large basis sets for cases where
+ basis set limit accuracy is needed, or for small systems where CPU
+ time is not a concern.
+
+
+*******************************************************************************
+
+Basis set description SZ, DZ, DZP, TZP, TZ2P, TZ2P+, QZ4P:
+ Comparison of the sizes of the ZORA basis sets.
+ Warning: this table is not exact in all cases.
+ Warning: sometimes increasing the basis set from TZP
+          to TZ2P will not always give you extra basis functions
+          (especially for most lanthanide and actinide frozen
+           core basis sets)
+ ---------------------------------------------------------------------------------
+                        | valence     | extra functions
+                        | orbitals    | SZ   DZ   DZP   TZP   TZ2P   TZ2P+  QZ4P  
+ ---------------------------------------------------------------------------------
+ H-He       Z = 1-2     | 1s          |           p     p     pd            s2p2d 
+ Li         Z = 3       | 2s          | p    p    pd    2pd   2pdf          3p2d2f
+ Be         Z = 4       | 2s          | p    p    pd    3pd   3pdf          3p2d2f
+ B-Ne       Z = 5-10    | 2s 2p       |           d     d     df            2d2f  
+ Na         Z = 11      | 2p 3s       | p    p    pd    pd    pdf           p2d2f 
+ Mg         Z = 12      | 2p 3s       | p    p    pd    pd    2pdf          p2d2f 
+ Al-Ar      Z = 13-18   | 3s 3p       |           d     d     df            3d2f  
+ K          Z = 19      | 3p 4s       | p    pd   p2d   p2d   p2df          p4d3f 
+ Ca         Z = 20      | 3p 4s       | p    pd   p2d   p2d   p3df          p4d3f 
+ Sc-Zn      Z = 21-30   | 3d 4s       | p    pd         p     pf     pdf    2pd3f 
+ Ga-Kr      Z = 31-36   | 3d 4s 4p    |                 d     df            2d3f  
+ ---------------------------------------------------------------------------------
+                        | valence     | extra functions
+                        | orbitals    |      DZ         TZP   TZ2P          QZ4P  
+ ---------------------------------------------------------------------------------
+ Rb-Sr      Z = 37-38   | 3d 4p 5s    |      pd         pd    p2df          p2d3f 
+ Y-Cd       Z = 39-48   | 4d 5s       |      p          p     pf            p3f   
+ In-Xe      Z = 49-54   | 4d 5s 5p    |                 d     df            d3f   
+ Cs-Ba      Z = 55-56   | 4d 5p 6s    |      pd         p2df  p2d2f         p2d4f 
+ La-Gd      Z = 57-64   | 4f 5d 6s    |      pf         p     p             2p2f  
+ Tb-Yb      Z = 65-70   | 4f 5d 6s    |      pf         p     pf            2p2f  
+ Lu-Hg      Z = 71-80   | 4f 5d 6s    |      p          p     pf            2p2f  
+ Tl-Rn      Z = 81-86   | 4f 5d 6s 6p |                 d     df            d2f   
+ Fr-Ra      Z = 87-88   | 7s          |      pdf        p2df  p2d2f         pd3f  
+ Ac-Lr      Z = 89-103  | 5f 6d 7s    |      pf         p     2p            2p    
+ Rf-E112    Z = 104-112 | 5f 6d 7s    |      p          p     pf            2pf   
+ E113-E118  Z = 113-118 | 5f 6d 7s 7p |                       f             sd2f   
+ ---------------------------------------------------------------------------------
+ 
+ The all electron SZ basis sets all are single zeta in the core,
+ the all electron DZ, DZP, TZP, and TZ2P basis sets all are double zeta in
+ the core, and the all electron QZ4P basis sets are triple zeta in the core.
+ In the valence region the SZ basis sets are single zeta, the DZ and DZP
+ basis sets are double zeta, the TZP and TZ2P basis sets are triple zeta,
+ and the QZ4P basis set are quadruple zeta.
+ The Table shows under the header `valence orbitals' the occupied orbitals
+ which are considered to be in the valence region and which are fitted with
+ one (SZ), two (DZ), three (TZ), or four (QZ) STOs.
+ This list of valence orbitals should not be used as the definition of
+ valence orbitals, it is made here only for convenience.
+ The Table also shows under the header of the name of the basis sets
+ the number of extra functions of s, p, d or f type STOs that are
+ included in the basis sets.
+ These functions can be either polarization functions or (somewhat) diffuse
+ functions, which are included mostly for a better description of molecular
+ orbitals.
+ Frozen core basis set are also available in the SZ, DZ, DZP, TZP, TZ2P directories.
+ In the valence region these basis sets are the same as the corresponding
+ all electron basis sets.
+ In the core region one core orthogonalization function, a Slater-type
+ function (STO), per frozen core orbital is used to orthogonalize
+ the basis function on the accurately calculated core orbitals,
+ coming from atomic calculations.
+ The SZ basis sets are available for the elements H-Kr (Z=1-36).
+ The DZP basis sets are available for the elements H-Ca, Ga-Kr (Z=1-20,Z=31-36).
+ The DZ, TZP, TZ2P, and QZ4P basis sets are available for the
+ elements H-E118 (Z=1-118).
+ The TZ2P+ basis is available for elements Sc-Zn (Z=21-30).
+ 
+ Especially for the elements H-Kr (Z=1-36) one can find large basis sets
+ in the ../ET (even tempered) directory.
+
+ Warning: one should not use frozen core non-relativistic basis sets in ZORA calculations.
+
+
+*******************************************************************************
+
+The standard basis sets have been updated in ADF2002.02 and have changed
+their names.
+
+ -------------------
+ Old name | New name
+ -------------------
+ I        | SZ
+ II       | DZ
+ III      | DZP
+ IV       | TZP
+ V        | TZ2P
+ -------------------
+
+The fit sets of the all electron basis sets of Li and Be
+have been improved in ADF2002.03 for
+the directories DZ, DZP, TZP, and TZ2P
+
+*******************************************************************************
+
